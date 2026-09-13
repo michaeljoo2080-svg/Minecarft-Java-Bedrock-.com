@@ -1,0 +1,249 @@
+    
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Minecraft Welt</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #222;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: #333;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        nav {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        nav button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 14px 22px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background: #45a049;
+        }
+
+        .seite {
+            display: none;
+        }
+
+        .aktiv {
+            display: block;
+        }
+
+        .server {
+            background: #333;
+            margin: 15px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 12px;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .server h2 {
+            margin-top: 0;
+        }
+
+        .adresse {
+            background: #111;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 16px;
+        }
+
+        .online {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>⛏️ Meine Minecraft Welt</h1>
+    <p>Willkommen auf meiner Minecraft-Webseite!</p>
+</header>
+
+<nav>
+    <button onclick="zeigeSeite('start')">🏠 Startseite</button>
+    <button onclick="zeigeSeite('server')">🎮 Server</button>
+    <button onclick="zeigeSeite('welt')">🧱 Meine Welt</button>
+    <button onclick="zeigeSeite('bilder')">📸 Bilder</button>
+</nav>
+
+<!-- STARTSEITE -->
+<section id="start" class="seite aktiv">
+    <h2>🌳 Willkommen!</h2>
+    <p>
+        Hier findest du Informationen über meine Minecraft-Welt,
+        meinen Server und meine Abenteuer.
+    </p>
+</section>
+
+<!-- SERVERLISTE -->
+<section id="server" class="seite">
+
+    <h1>🎮 Minecraft Serverliste</h1>
+
+    <div class="server">
+        <h2>🟢 Server 1 – Mein Server</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">darkfloor.ddns.net:25565</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 2</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server2.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 3</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server3.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 4</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server4.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 5</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server5.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 6</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server6.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 7</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server7.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 8</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server8.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 9</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server9.example.com</div>
+    </div>
+
+    <div class="server">
+        <h2>🟢 Server 10</h2>
+        <p class="online">● Online</p>
+        <p>Server-Adresse:</p>
+        <div class="adresse">server10.example.com</div>
+    </div>
+
+</section>
+
+<!-- MEINE WELT -->
+<section id="welt" class="seite">
+    <h1>🧱 Meine Minecraft-Welt</h1>
+    <p>Hier kannst du später Informationen über deine Welt eintragen.</p>
+</section>
+
+<!-- BILDER -->
+<section id="bilder" class="seite">
+    <h1>📸 Bilder</h1>
+    <p>Hier kannst du später deine Minecraft-Bilder hinzufügen.</p>
+</section>
+
+<script>
+    function zeigeSeite(seite) {
+
+        // Alle Seiten verstecken
+        document.querySelectorAll(".seite").forEach(function(element) {
+            element.classList.remove("aktiv");
+        });
+
+        // Gewählte Seite anzeigen
+        document.getElementById(seite).classList.add("aktiv");
+    }
+</script>
+
+
+      
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<
